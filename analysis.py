@@ -2,6 +2,7 @@ __author__ = 'geoffrey'
 
 import numpy
 import matplotlib.pyplot as plt
+import scipy.stats as stats
 from numpy.lib import recfunctions as rfn
 
 if __name__ == '__main__':
@@ -12,12 +13,29 @@ if __name__ == '__main__':
 
 
     for hour in range(0, 24):
-        print hour
+
         hour_array = array[array['hour'] == hour]
         differences = numpy.diff(hour_array['congestion'])
 
-        print type(differences)
+        numpy.savetxt('differences_hour_'+ str(hour) +'.txt', differences, fmt=['%4.2f'])
 
-        #plt.hist(differences, 100, range=(-30, 30))
 
-        #plt.show()
+        plt.subplot(3, 8, hour+1)
+        plt.hist(differences, 100, range=(-30, 30), normed=True)
+
+        differences.sort()
+        mean = numpy.mean(differences)
+        std = numpy.std(differences)
+        # kurtosis = stats.kurtosis(differences)
+
+        # pdf = stats.norm.pdf(differences, mean, std, kurtosis)
+
+        model = stats.norm.fit(differences)
+
+        #print stats.norm.stats(differences, moments='mvsk')
+
+        plt.plot(differences, stats.norm.pdf(differences))
+        # plt.show()
+
+    # plt.savefig('24_hour_difference_distributions.png')
+    plt.show()
