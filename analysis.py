@@ -24,7 +24,15 @@ if __name__ == '__main__':
     array = numpy.loadtxt('hour.txt', dtype=dt, delimiter=',')
 
 
-    for hour in range(0, 1):
+    all_differences = numpy.diff(array['congestion'])
+
+    plt.plot(all_differences)
+    plt.ylabel("$\Delta $ \$")
+    plt.xlabel("t")
+    plt.show()
+
+
+    for hour in range(0, 24):
 
         hour_array = array[array['hour'] == hour]
         differences = numpy.diff(hour_array['congestion'])
@@ -35,31 +43,27 @@ if __name__ == '__main__':
 
         numpy.savetxt('differences_hour_'+ str(hour) +'.txt', differences, fmt=['%4.2f'])
 
-        #plt.subplot(3, 8, hour+1)
-        plt.hist(differences, 100, range=(-30, 30), normed=True)
+        plt.subplot(3, 8, hour+1)
+        plt.hist(differences, 100, range=(-20, 20), normed=True)
+        plt.xticks(numpy.arange(-20, 21, 10))
+        plt.ylim(0, 0.5)
 
         differences.sort()
         # n = differences.size
         # percentile = round(n / 100, 0)
         # subset = differences[percentile : n - percentile]
 
-        x = numpy.linspace(-15, 15, 100)
+        x = numpy.linspace(-20, 20, 100)
 
-        params = stats.norm.fit(differences)
+        #params = stats.norm.fit(differences)
 
-        pdf_fitted = stats.norm.pdf(x, loc=params[0], scale=params[1])
+        #pdf_fitted = stats.norm.pdf(x, loc=params[0], scale=params[1])
 
         pdf = stats.gaussian_kde(differences)
 
-        plt.plot(x, pdf_fitted, 'r-', x, pdf(x), 'g-')
-        plt.show()
+        plt.plot(x, pdf(x), 'g-')
 
-        num_bins = 1000
-        counts, bin_edges = numpy.histogram(differences, bins=num_bins)
-
-        cdf = numpy.cumsum(counts)
-        plt.plot(bin_edges[1:], cdf)
-        plt.show()
+    plt.show()
 
 
     # plt.savefig('24_hour_difference_distributions.png')
