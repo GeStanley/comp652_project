@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.1.16)  20 APR 2015 14:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.1.16)  20 APR 2015 16:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -691,10 +691,10 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: price_differences.jpg Graphic file (type jpg)
 
 <use price_differences.jpg>
-Package pdftex.def Info: price_differences.jpg used on input line 131.
+Package pdftex.def Info: price_differences.jpg used on input line 136.
 (pdftex.def)             Requested size: 500.0pt x 224.2705pt.
 
-Overfull \hbox (30.24501pt too wide) in paragraph at lines 131--131
+Overfull \hbox (30.24501pt too wide) in paragraph at lines 136--136
  [] 
  []
 
@@ -702,36 +702,37 @@ Overfull \hbox (30.24501pt too wide) in paragraph at lines 131--131
 File: hourly_distributions.jpg Graphic file (type jpg)
 
 <use hourly_distributions.jpg>
-Package pdftex.def Info: hourly_distributions.jpg used on input line 136.
+Package pdftex.def Info: hourly_distributions.jpg used on input line 144.
 (pdftex.def)             Requested size: 500.0pt x 291.17584pt.
 
-Overfull \hbox (30.24501pt too wide) in paragraph at lines 136--136
+Overfull \hbox (30.24501pt too wide) in paragraph at lines 144--144
  [] 
  []
 
-(./Project.bbl [2 <./price_differences.jpg> <./hourly_distributions.jpg>])
-
+(./Project.bbl [2 <./price_differences.jpg> <./hourly_distributions.jpg>]
+[3]) 
 AED: lastpage setting LastPage
-[3
+[4
 
 ] (./Project.aux) ) 
 Here is how much of TeX's memory you used:
- 15203 strings out of 493109
- 284109 string characters out of 6135010
+ 15206 strings out of 493109
+ 284142 string characters out of 6135010
  365108 words of memory out of 5000000
- 18319 multiletter control sequences out of 15000+600000
- 11453 words of font info for 42 fonts, out of 8000000 for 9000
+ 18321 multiletter control sequences out of 15000+600000
+ 11799 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,11n,54p,410b,274s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmbx12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmr10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmr9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmti12.pfb>
-Output written on Project.pdf (4 pages, 510592 bytes).
+/cmti10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmti12.pfb>
+Output written on Project.pdf (5 pages, 522788 bytes).
 PDF statistics:
- 38 PDF objects out of 1000 (max. 8388607)
- 25 compressed objects within 1 object stream
+ 45 PDF objects out of 1000 (max. 8388607)
+ 30 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -116,33 +116,39 @@ In order to protect generators from unforseen congestion events products called
 up to congestion (UTC) contracts were created...
 
 \subsection*{Methodology}
-Ignoring potential variables such as fuel costs, weather and outages, as a a first
+Ignoring potential variables such as fuel costs, weather and outages; as a first
 attempt in trying to evaluate the value of a UTC contract a Markov
-Chain Monte Carlo approach will be used. The objective will be to use the
+Chain Monte Carlo (MCMC) approach will be used. The objective will be to use the
 previous distribution of differences between UTC contract prices and the last
-known price to estimate the most likely value in the future.
+known price to estimate the most likely value in the future. A similar method to
+the one used by Landauskas \cite{landauskas} to evaluate future stock prices will
+be used.
 
 In order to attempt to reduce the effect of variables outside of normal seasonality
 aggregates of nodes were selected; Eastern Hub and Western Hub. These hubs are an average
 of a few hundred different pricing nodes within their regions.
 
-
-Price differences between January first 2013 and January first 2015 did not
-fluctuate a great deal except for a period in January 2014. The differences in
+Eastern Hub and Western Hub Price differences between January first 2013 and
+January first 2015 were consistent except for a period in January 2014. The differences in
 price from one hour to the next for this two year period can be seen in the
 following figure:
 \begin{center}
 \includegraphics[width=500pt, keepaspectratio=true]{price_differences.jpg}\\
 \end{center}
 Because of the tendency of price differences to be within a rather tight range
-with the exception of a few outliers  10\% of the top and bottom
+with the exception of a few outliers 10\% of the top and bottom will be removed when
+evaluating their distributions.
 
+The differences in price distributions between hours of the day is significant:
 \begin{center}
 \includegraphics[width=500pt, keepaspectratio=true]{hourly_distributions.jpg}\\
 \end{center}
+The figure above shows the price differences for hours ending 0 through 23. The x-axis
+is the difference in price and the y-axis is the probability 0 to 1 of that difference.
+Evening hours 22, 23 and 0 through 6 are much less volatile then the others. As such,
+the UTC contracts should be evaluated on an hourly basis given the price it was
+worth at the same hour the previous day.
 
-
-\cite{scipy}
 \subsection*{Set-up}
 \subsection*{Results}
 \subsection*{Conclusions}

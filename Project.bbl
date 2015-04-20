@@ -5,4 +5,9 @@ Eric Jones, Travis Oliphant, Pearu Peterson, et~al.
 \newblock {SciPy}: Open source scientific tools for {Python}, 2001--.
 \newblock [Online; accessed 2015-04-20].
 
+\bibitem{landauskas}
+Mantas Landauskas and Eimutis Valakevicius.
+\newblock Modelling of stock prices by the markov chain monte carlo method.
+\newblock {\em Intellectual Economics}, 5(2(10)):244--256, 2011.
+
 \end{thebibliography}
