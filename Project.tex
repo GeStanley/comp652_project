@@ -110,10 +110,23 @@ mostly be driven by fuel costs; uranium, natural gas, coal and the amount of win
 Physical variables will be the current status of the network; what outages and
 constraints there are on the system.
 
-Congestion...
+Congestion in the electricity grid will occur when the price of energy between
+two nodes is different. This will occur when different types of generation power
+different load zones. For example, take cities A and B both of which consume
+100mwh and let's assume that city A is connected to generator E while city B is connected to
+ F which also produces 200mwh. In a situation where E can produce 200mwh at
+15\$ and F at 20\$ there will be no congestion so long as 100mwh can freely flow
+between city A and city B. However, if only 50mwh can flow
+from A to B then generator F will need to be turned on to produce the remaining
+50mwh required by city B. This results in a cost of energy
+of 20\$ in city B and a congestion of 5\$ between the two cities.
 
-In order to protect generators from unforseen congestion events products called
-up to congestion (UTC) contracts were created...
+In order to protect generators from unforseen congestion events a product called
+up to congestion (UTC) contracts were created. The holder of these contracts will
+receive payments when more congestion occurs then expected and have to make payments
+when less congestion the expected occurs.
+
+Which creates the problem of how to accurately evaluate the value of these contracts.
 
 \subsection*{Methodology}
 Ignoring potential variables such as fuel costs, weather and outages; as a first
