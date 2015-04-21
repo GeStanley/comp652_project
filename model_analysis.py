@@ -15,22 +15,54 @@ def describe_data(x):
     print 'kurtosis: ', kurt
     print 'median: ', scipy.median(x)
 
+
+
 if __name__ == '__main__':
+
+
+    iterations = 10
+
     dt = numpy.dtype([('time_id', 'S32'), ('congestion', 'f8'), ('hour', 'i8')])
 
     array = numpy.loadtxt('hour.txt', dtype=dt, delimiter=',')
 
 
-    for hour in range(0, 2):
+    for model_range in range(30, 31):
 
-        hour_array = array[array['hour'] == hour]
-        differences = numpy.diff(hour_array['congestion'])
+        for hour in range(0, 1):
 
-        describe_data(differences)
-        print ''
+            hour_array = array[array['hour'] == hour]
 
-        pdf = stats.gaussian_kde(differences)
+            predictions = []
+            targets = []
 
-        x = numpy.linspace(-50, 50, 100)
-        plt.plot(x, pdf(x), 'g-')
-        plt.show()
+            for count in range(0, len(hour_array) - model_range):
+
+                model_data = hour_array[count: count + model_range]
+
+                last_price = model_data[-2]
+                prediction_objective = model_data[-1]
+
+                differences = numpy.diff(model_data[0:-1]['congestion'])
+                differences_pdf = stats.gaussian_kde(differences)
+
+                generated_differences = differences_pdf.resample(iterations)
+
+                target_distribution = generated_differences + last_price['congestion']
+                target_pdf = stats.gaussian_kde(target_distribution)
+
+
+                x = numpy.linspace(-100, 100, 1000)
+                y = target_pdf(x)
+
+                predictions.append(x[numpy.argmax(y)])
+                targets.append(prediction_objective['congestion'])
+
+            targets = numpy.asarray(targets)
+            predictions = numpy.asarray(predictions)
+
+            error = numpy.sum((targets - predictions) ** 2) / len(predictions)
+            print error
+
+            plt.plot(predictions, 'g-', targets, 'r-')
+            plt.show()

@@ -70,6 +70,10 @@ LogM   = numpy.log(numpy.array(Masses))
 D      = numpy.mean(LogM)*N
 
 
+print LogM
+print D
+
+
 # Plot distribution.
 plt.figure(1)
 plt.hist(LogM, 30, histtype='step', lw=3, log=True,
@@ -108,6 +112,7 @@ for n in range(10000):
     old_alpha  = A[len(A)-1]  # old parameter value as array
     old_loglik = evaluateLogLikelihood(old_alpha, D, N, M_min,
                     M_max)
+
 
     # Suggest new candidate from Gaussian proposal distribution.
     new_alpha = numpy.zeros([len(old_alpha)])
