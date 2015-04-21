@@ -44,6 +44,14 @@ if __name__ == '__main__':
                 prediction_objective = model_data[-1]
 
                 differences = numpy.diff(model_data[0:-1]['congestion'])
+
+                # remove top 10% and bottom 10% from the distribution
+                differences = numpy.sort(differences)
+                size = len(differences)
+                percentile = round(size / 10, 0)
+                differences = differences[percentile : size - percentile]
+
+                # fit the distribution using kernel density estimate
                 differences_pdf = stats.gaussian_kde(differences)
 
                 generated_differences = differences_pdf.resample(iterations)
@@ -52,7 +60,9 @@ if __name__ == '__main__':
                 target_pdf = stats.gaussian_kde(target_distribution)
 
 
-                x = numpy.linspace(-100, 100, 1000)
+                x = numpy.linspace(numpy.min(target_distribution),
+                                   numpy.max(target_distribution),
+                                   1000)
                 y = target_pdf(x)
 
                 predictions.append(x[numpy.argmax(y)])
@@ -62,7 +72,8 @@ if __name__ == '__main__':
             predictions = numpy.asarray(predictions)
 
             error = numpy.sum((targets - predictions) ** 2) / len(predictions)
-            print error
 
+            plt.plot(targets - predictions)
+            plt.show()
             plt.plot(predictions, 'g-', targets, 'r-')
             plt.show()

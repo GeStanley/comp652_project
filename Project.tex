@@ -137,6 +137,20 @@ known price to estimate the most likely value in the future. A similar method to
 the one used by Landauskas \cite{landauskas} to evaluate future stock prices will
 be used.
 
+The first step will be the estimation of the distribution for price differences
+for a particular time range. This will be done using SciPy's \cite{scipy}
+implementation of Gaussian kernel density estimate (KDE). This implementation will
+also allow for the generation of a set of random samples from the distribution.
+Once the random samples are generated, they will be added to the previous known
+price of the contract and the Gaussian KDE will again be used to infer the
+distribution of potential future contract prices. The price with the greatest
+likelihood will be used as the forecasted price. The evaluation of the model's accuracy will
+be done by summing the squared error of the differences between the forecasted prices
+and the actual prices.
+
+Due to the seasonality of the prices the amount of history use to estimate the
+probability distribution of price differences will need to be optimized. As such,
+
 In order to attempt to reduce the effect of variables outside of normal seasonality
 aggregates of nodes were selected; Eastern Hub and Western Hub. These hubs are an average
 of a few hundred different pricing nodes within their regions.
@@ -163,6 +177,8 @@ the UTC contracts should be evaluated on an hourly basis given the price it was
 worth at the same hour the previous day.
 
 \subsection*{Set-up}
+The data used was a time series of two years between January 1st 2013 and
+January 1st 2015 of price differences between Eastern and Western Hubs.
 \subsection*{Results}
 \subsection*{Conclusions}
 
