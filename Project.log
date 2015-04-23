@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.1.16)  20 APR 2015 16:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2015.1.16)  23 APR 2015 14:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -687,52 +687,164 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<price_differences.jpg, id=12, 1794.705pt x 805.0075pt>
+Underfull \hbox (badness 10000) in paragraph at lines 78--85
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--94
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--102
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--112
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--123
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--128
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
+
+ []
+
+
+LaTeX Warning: Citation `landauskas' on page 1 undefined on input line 137.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 132--139
+
+ []
+
+
+LaTeX Warning: Citation `scipy' on page 1 undefined on input line 141.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--150
+
+ []
+
+
+LaTeX Warning: Reference `LastPage' on page 1 undefined on input line 150.
+
+[1]
+Underfull \hbox (badness 10000) in paragraph at lines 151--157
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--161
+
+ []
+
+<price_differences.jpg, id=17, 1794.705pt x 805.0075pt>
 File: price_differences.jpg Graphic file (type jpg)
 
 <use price_differences.jpg>
-Package pdftex.def Info: price_differences.jpg used on input line 149.
+Package pdftex.def Info: price_differences.jpg used on input line 165.
 (pdftex.def)             Requested size: 500.0pt x 224.2705pt.
 
-Overfull \hbox (30.24501pt too wide) in paragraph at lines 149--149
+Overfull \hbox (30.24501pt too wide) in paragraph at lines 165--166
  [] 
  []
 
-[1] <hourly_distributions.jpg, id=17, 2059.695pt x 1199.48125pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 167--171
+
+ []
+
+<hourly_distributions.jpg, id=18, 2059.695pt x 1199.48125pt>
 File: hourly_distributions.jpg Graphic file (type jpg)
 
 <use hourly_distributions.jpg>
-Package pdftex.def Info: hourly_distributions.jpg used on input line 157.
+Package pdftex.def Info: hourly_distributions.jpg used on input line 179.
 (pdftex.def)             Requested size: 500.0pt x 291.17584pt.
 
-Overfull \hbox (30.24501pt too wide) in paragraph at lines 157--157
+Overfull \hbox (30.24501pt too wide) in paragraph at lines 179--180
  [] 
  []
 
-(./Project.bbl [2 <./price_differences.jpg> <./hourly_distributions.jpg>]
-[3]) 
-AED: lastpage setting LastPage
-[4
 
-] (./Project.aux) ) 
+LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 180.
+
+[2 <./price_differences.jpg>]
+<mean_squared_error.jpg, id=27, 1212.53pt x 750.805pt>
+File: mean_squared_error.jpg Graphic file (type jpg)
+
+<use mean_squared_error.jpg>
+Package pdftex.def Info: mean_squared_error.jpg used on input line 193.
+(pdftex.def)             Requested size: 250.0pt x 154.79816pt.
+ <outlier_error.jpg, id=28, 815.045pt x 614.295pt>
+File: outlier_error.jpg Graphic file (type jpg)
+
+<use outlier_error.jpg>
+Package pdftex.def Info: outlier_error.jpg used on input line 199.
+(pdftex.def)             Requested size: 250.0pt x 188.42357pt.
+
+
+LaTeX Warning: Reference `LastPage' on page 3 undefined on input line 200.
+
+[3 <./hourly_distributions.jpg> <./mean_squared_error.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 203--208
+
+ []
+
+(./Project.bbl
+
+LaTeX Warning: Reference `LastPage' on page 4 undefined on input line 1.
+
+[4 <./outlier_error.jpg>])
+
+Package lastpage Warning: Rerun to get the references right on input line 217.
+
+
+AED: lastpage setting LastPage
+[5
+
+] (./Project.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 15206 strings out of 493109
- 284142 string characters out of 6135010
- 367108 words of memory out of 5000000
- 18321 multiletter control sequences out of 15000+600000
- 11799 words of font info for 43 fonts, out of 8000000 for 9000
+ 15229 strings out of 493109
+ 284508 string characters out of 6135010
+ 368108 words of memory out of 5000000
+ 18339 multiletter control sequences out of 15000+600000
+ 13806 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,11n,54p,410b,274s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmbx12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmti10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmti12.pfb>
-Output written on Project.pdf (5 pages, 524063 bytes).
+ 55i,11n,54p,410b,285s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></u
+sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/lo
+cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local
+/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
+texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/te
+xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/tex
+live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on Project.pdf (6 pages, 672743 bytes).
 PDF statistics:
- 45 PDF objects out of 1000 (max. 8388607)
- 30 compressed objects within 1 object stream
+ 74 PDF objects out of 1000 (max. 8388607)
+ 50 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 33 words of extra memory for PDF output out of 10000 (max. 10000000)
 

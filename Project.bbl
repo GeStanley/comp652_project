@@ -10,4 +10,11 @@ Mantas Landauskas and Eimutis Valakevicius.
 \newblock Modelling of stock prices by the markov chain monte carlo method.
 \newblock {\em Intellectual Economics}, 5(2(10)):244--256, 2011.
 
+\bibitem{tang}
+Q.~Tang and D~Gu.
+\newblock Day-ahead electricity prices forecasting using artificial neural
+  networks.
+\newblock {\em Artifical Intelligence and Computation Intelligence},
+  2:511--514, 2009.
+
 \end{thebibliography}
