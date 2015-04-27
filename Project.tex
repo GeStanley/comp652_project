@@ -159,22 +159,24 @@ In order to attempt to reduce the effect of variables outside of normal seasonal
 aggregates of nodes were selected; Eastern Hub and Western Hub. These hubs are an average
 of a few hundred different pricing nodes within their regions.\\
 
-Price differences between Eastern Hub and Western Hub Price from
+Price differences between Eastern Hub and Western Hub from
 January first 2013 and January first 2015 can be seen in the following figure:
+
 \begin{center}
 \includegraphics[width=500pt, keepaspectratio=true]{price_differences.jpg}
 \end{center}
+
 Differences were consistent except for a period in January 2014. Because of the
-tendency of price differences to be within a rather tight range the next optimization
-issue will be deciding how many of the outliers to remove when evaluating the
-price difference distribution.\\
+tendency of the differences to be within a rather tight range the next optimization
+problem will be deciding how many of the outliers to remove when evaluating the
+data distribution.\\
 
-\subsection*{Set-up}
+As a second step, after the optimal amount of history to be used is identified, the
+same use the same process described previously for forecasting a ptice at $t_1$
+however in this approach the amount of outliers removed will vary. From the bottom
+and top $0\%$ to $25\%$.\\
 
-
-
-
-The differences in price distributions between hours of the day is significant:
+Lastly, the differences in price distributions between hours of the day is significant:
 \begin{center}
 \includegraphics[width=500pt, keepaspectratio=true]{hourly_distributions.jpg}
 \end{center}
@@ -183,6 +185,20 @@ is the difference in price and the y-axis is the probability 0 to 1 of that diff
 Evening hours 22, 23 and 0 through 6 are much less volatile then the others. As such,
 the UTC contracts should be evaluated on an hourly basis given the price it was
 worth at the same hour the previous day.
+
+\subsection*{Experimental Set-up}
+Data was obtained from the PJM website \cite{pjm}. Data was extracted using their
+eData service. Specifically, data for the Eastern Hub and Western Hub nodes between
+January 1st 2013 and January 1st 2015. Two database tables were created for each
+of the nodes and the were subsequently joined by timestamp in order to be able to
+calculate congestion between the two nodes. Congestion beeing the price of the
+energy component in the Eastern Hub minus the price of the energy components in the
+Western Hub.
+
+Once this data was generated the data was further split into 24 tables for the 24 hours
+of the day. With these tables I was able to calculate the difference in price from
+one day to the next for a particular hour.
+
 
 
 \subsection*{Results}
@@ -193,17 +209,24 @@ function of the amount of history used to fit the model.
 \includegraphics[width=250pt, keepaspectratio=true]{mean_squared_error.jpg}
 \end{center}
 
-This shows that the optimum amount of history to be used is around a month of data.
+This shows that the optimum amount of history to be used is about 30 days.
 
+The next figure shows the improvement of mean squared error as outliers are removed:
 \begin{center}
 \includegraphics[width=250pt, keepaspectratio=true]{outlier_error.jpg}
 \end{center}
+The interpretation of this graph leads me to believe that predictive feature for
+future prices is no the distribution of price differences but in fact the actual
+price at $t_{0-1}$. This is because accuracy continues to increase as fewer and
+fewer data points are used to evaluate the price difference distribution. I believe
+this is caused by the mean reverting nature of the price of the contracts.
+
 \subsection*{Conclusions}
 
 One of the weaknesses of this approach is that it does not take into account the
 mean reverting tendency of energy prices. In other words, when a price suddenly
 jumps this approach to modelizing the price behavior assumes that the price will
-maintain the price it spiked to. A more robust approach would need to take into account
+maintain the price it moved to. A more robust approach would need to take into account
 how strong the tendency is to revert to a mean price and what that mean is.\\
 
 Further work would also need to take into account more of the features. One potential
